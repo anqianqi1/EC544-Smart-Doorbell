@@ -15,12 +15,22 @@ If you set up things above, you are able to sent signal to AWS topic.
 ### Raspberry Pi
 If you also want the Pi to receive message from the topic, you need to add new thing Pi in your AWS console. And also download the key and certificates. We are using AWSIoTPythonSDK which will get signal and sent signal to the topic that you subscribe. And you need to define your endpoint, certificate path, key path and the topic that you want to subscribe.
 We are using cuntomCallback() to receive the message from MQTT topic. If the message we get from the topic is “RUN” which is sent by the button, we will trigger OpenCV and recognize the person. We are using Pi camera to capture the video. There is already a trained dataset, if the person matches one of the person in our database, it will send a signal to  myAWSIoTMQTTClient.publish() which will publish message to MQTT topic. We are publishing “SINGLE” to the topic.
-### Freedom board
+### Freedom board K64F
 For freedom board, we are using C SDK to receive message from MQTT topic, which is the same topic channel as before(freertos/demos/echo) . If the message freedom board gets equals to “SINGLE” the same as Pi published, it will turn the green light on, which means opens the door.
 
-## Run the code
-python subscribe.py (before that, add the paths of your own certificate, key, RootCA... into line #15 to #22)
+## Files Description
+01_face_dataset.py, 02_face_training, 03_face_recognition and haarcascade_frontalface_default.xml 
+These files can help you build up your own dataset and model. The model generated named trainer.yml should be placed in trainer folder.
 
-preess IoT button. 
+lambda.js is a nodejs file which should be set up in AWS IoT lambda function.
+
+frdmk64f_aws_device_configuration_enet is a folder of configuration of freedom board.
+
+## Run the code
+Unzip frdmk64f_aws_device_configuration_enet.zip and REPLACE the origin files.
+
+Python subscribe.py (before that, add the paths of your own certificate, key, RootCA... into line #15 to #22).
+
+Press IoT button. 
 
 If Picamera recognizes the person, the light of freedom board will turn green.
