@@ -19,7 +19,7 @@ We are using cuntomCallback() to receive the message from MQTT topic. If the mes
 For freedom board, we are using C SDK to receive message from MQTT topic, which is the same topic channel as before(freertos/demos/echo) . If the message freedom board gets equals to “SINGLE” the same as Pi published, it will turn the green light on, which means opens the door.
 
 ## Files Description
-01_face_dataset.py, 02_face_training, 03_face_recognition and haarcascade_frontalface_default.xml 
+01_face_dataset.py, 02_face_training, 03_face_recognition and haarcascade_frontalface_default.xml. 
 These files can help you build up your own dataset and model. The model generated named trainer.yml should be placed in trainer folder.
 
 lambda.js is a nodejs file which should be set up in AWS IoT lambda function.
