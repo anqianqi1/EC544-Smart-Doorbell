@@ -18,4 +18,5 @@ For freedom board, we are using C SDK to receive message from MQTT topic, which 
 
 ## run the code
 python subscribe.py
-prees IoT button if it recognize the person, the freedom board will turn green.
+
+preess IoT button if it recognize the person, the freedom board will turn green.
