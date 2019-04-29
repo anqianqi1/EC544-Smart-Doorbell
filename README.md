@@ -15,3 +15,7 @@ If you also want the Pi to receive message from the topic, you need to add new t
 We are using cuntomCallback() to receive the message from MQTT topic. If the message we get from the topic is “RUN” which is sent by the button, we will trigger OpenCV and recognize the person. We are using Pi camera to capture the video. There is already a trained dataset, if the person matches one of the person in our database, it will send a signal to  myAWSIoTMQTTClient.publish() which will publish message to MQTT topic. We are publishing “SINGLE” to the topic.
 ### freedom board
 For freedom board, we are using C SDK to receive message from MQTT topic, which is the same topic channel as before(freertos/demos/echo) . If the message freedom board gets equals to “SINGLE” the same as Pi published, it will turn the green light on, which means opens the door.
+
+## run the code
+python subscribe.py
+prees IoT button if it recognize the person, the freedom board will turn green.
