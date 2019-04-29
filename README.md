@@ -4,6 +4,7 @@ The goal of our project is to build a secure smart doorbell. There are several s
 
 ## work flow
 < img "/proposal diagram/1.jpg" width="180" height="200" style="width:80%">
+
 user press button(knock at the door) -> IoT buton send signal to AWS topic -> Pi get signal from the topic -> trigger OpenCV to facial recognition to detect whether this is the person that we want to open the door for -> If successfully recognize -> sent signal to AWS topic -> frdm board get signal from topic -> light green light(Open the door)
 
 ## implementation
