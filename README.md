@@ -19,7 +19,7 @@ We are using cuntomCallback() to receive the message from MQTT topic. If the mes
 For freedom board, we are using C SDK to receive message from MQTT topic, which is the same topic channel as before(freertos/demos/echo) . If the message freedom board gets equals to “SINGLE” the same as Pi published, it will turn the green light on, which means opens the door.
 
 ## Run the code
-python subscribe.py (before that, add your own certificate, key and RootCA paths into line #
+python subscribe.py (before that, add the paths of your own certificate, key, RootCA... into line #15 to #22)
 
 preess IoT button. 
 
